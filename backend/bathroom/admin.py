@@ -1,11 +1,9 @@
 from django.contrib import admin
-
-# Register your models here.
 from .models import bathroom
 
 
 class bathroomAdmin(admin.ModelAdmin):
-    list_display = ('id', 'building_id', 'building_name', 'longitude', 'latitude', 'floor',
+    list_display = ('id', 'building_id', 'building_name', 'floor',
                     'room_number', 'num_toilets', 'num_urinals', 'num_sinks', 'gender')
 
 # Register your models here.
