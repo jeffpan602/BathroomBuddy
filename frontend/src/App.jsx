@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
+import { CssBaseline, Grid } from '@material-ui/core';
 
 import { getPlacesData } from './api';
+import Header from './components/Header/Header';
 
 function App() {
   const [places, setPlaces] = useState([]);
@@ -16,12 +17,18 @@ function App() {
     <div className="App">
       <CssBaseline />
       <Header />
+      <Grid container spacing={3} style={{width:'100%'}}>
+        <Grid item xs={12} md={4}>
+          <h1>Places Data </h1>
+          <p> { places.map( (place) => place.name + " " ) } </p>
+        </Grid>
+        <Grid item xs={8} >
+          <Map />
+        </Grid>
+      </Grid> 
 
-      <h1>Bathroom Buddy</h1>
-      <p>{places.map((place) => place.name + " " )}</p>
-      
     </div>
   )
 }
 
-export default App
+export default App;
