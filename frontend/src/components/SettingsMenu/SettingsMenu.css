@@ -18,21 +18,22 @@
 .modal-content{
     position: fixed;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 150px;
+    
+    transform: translate(-50%);
 
-    height: 100vh;
+    height: calc(100vh - 200px);
     width: 75vw;
 
-    background-color: white;
+    background-color: darkcyan;
 
     z-index: 100;
 }
 
-.header{
+.modal-header{
     position:fixed;
     left:50%;
-    top:0;
+    top:50px;
     transform: translate(-50%);
     width:75vw;
     height: 100px;
@@ -43,4 +44,8 @@
 
     background-color: gray;
     z-index: 101;
+}
+
+.content{
+    margin: 10px;
 }

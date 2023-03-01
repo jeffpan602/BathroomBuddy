@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { CssBaseline, Grid } from '@material-ui/core';
 
 
-import { getPlacesData } from './api';
+import { getPlacesData, getUserData } from './api';
 import Header from './components/Header/Header';
 import Map from './components/Map/Map';
 import SettingsMenu from './components/SettingsMenu/SettingsMenu'
@@ -11,6 +11,7 @@ import './App.css'
 function App() {
   
   const [places, setPlaces] = useState([]);
+  const [users, setUsers] = useState([]);
 
   // side menu
   const [showSideMenu, setShowSideMenu] = useState(true);
@@ -24,9 +25,13 @@ function App() {
     setShowSettingsMenu(!showSettingsMenu);
   }
 
+  // call APIs
   useEffect(() => {
     getPlacesData().then((data) => {
       setPlaces(data)
+    });
+    getUserData().then((data) => {
+      setUsers(data)
     });
   },[]);
 
@@ -43,6 +48,7 @@ function App() {
       { showSettingsMenu ?
         <SettingsMenu
           toggleSettingsMenu = {toggleSettingsMenu}
+          users={users}
         />
         : <></>
       }

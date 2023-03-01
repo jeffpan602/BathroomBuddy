@@ -1,11 +1,11 @@
 import axios from 'axios';
 
+const URL = 'http://127.0.0.1:8000/api';
 
 export const getPlacesData = async () => {
     // try making an API request to local server
     try{
-        const URL = 'http://127.0.0.1:8000/api/location/';
-        const { data } = await axios.get(URL);
+        const { data } = await axios.get(URL+"/location/");
        return data;
     } catch(error) {
 
@@ -27,5 +27,15 @@ export const getPlacesData = async () => {
             },
         ];
 
+    }
+}
+
+
+export const getUserData = async () => {
+    try{
+        const { data } = await axios.get(URL+"/user/");
+        return data;
+    } catch(error) {
+        console.error(error);
     }
 }

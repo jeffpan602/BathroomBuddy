@@ -7,33 +7,29 @@ import './SettingsMenu.css'
 import Header from '../Header/Header'
 
 
-const SettingsMenu = ( {toggleSettingsMenu} ) =>{
-
+const SettingsMenu = ( {toggleSettingsMenu, users} ) =>{
 
     return(
         <div className="modal">
+            <div className='modal-header'>
+                <p style={{marginLeft:'50px'}}></p>
+                <h1>Settings</h1>
+                <IconButton onClick={toggleSettingsMenu} style={{color:'white', marginRight:'50px'}}>
+                    <CloseIcon />
+                </IconButton>
+            </div>
             <div className="modal-content">
+                <div className="content">
 
-                <div className='header'>
-                    <p style={{marginLeft:'50px'}}></p>
-                    <h1>Settings</h1>
-                    <IconButton onClick={toggleSettingsMenu} style={{color:'white', marginRight:'50px'}}>
-                        <CloseIcon />
-                    </IconButton>
-                    
-                </div>
-                <div>
-                    <h1>Hello</h1>
-                </div>
-                <div>
-                    <p>
-                        Hello 2
-                    </p>
-                    <p>
-                        Hello 3
-                    </p>
-                </div>
+                    <h1>Users:</h1>
+                    <div>
+                        <ul>
+                            { users?.map( (user) => <li key={user.id}> {user.username} </li> ) } 
+                        </ul>
+                    </div>
 
+
+                </div>
             </div>
         </div>
     )
