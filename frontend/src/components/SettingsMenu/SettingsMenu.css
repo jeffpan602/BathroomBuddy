@@ -1,0 +1,46 @@
+.modal {
+    position: fixed;
+    top:0;
+    left:0;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: rgba(0,0,0,0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 99;
+}
+
+.modal-content{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 100vh;
+    width: 75vw;
+
+    background-color: white;
+
+    z-index: 100;
+}
+
+.header{
+    position:fixed;
+    left:50%;
+    top:0;
+    transform: translate(-50%);
+    width:75vw;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: gray;
+    z-index: 101;
+}
